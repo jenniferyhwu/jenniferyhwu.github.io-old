@@ -1,0 +1,26 @@
+div.aboutme-wrapper {
+    color: rgba(118, 141, 141, 0.815);
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+
+    > :first-child {
+        margin-bottom: 10px;
+    }
+
+    div.content-row {
+        display: flex;
+        flex-direction: row;
+        height: calc(50% - 10px);
+        width: calc(100% - 10px);
+
+        > :first-child {
+            margin-right: 10px;
+        }
+
+        div.content-item {
+            height: 100%;
+            width: 50%;
+        }
+    }
+}

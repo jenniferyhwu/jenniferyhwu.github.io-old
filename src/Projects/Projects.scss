@@ -1,0 +1,50 @@
+div.project-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+
+    div.project-panel {
+        display: flex;
+        flex: 0 0 35%;
+        margin-left: 1em;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        div.panel-footer {
+            padding: 0.2em 0;
+            font-size: 0.8em;
+            letter-spacing: 0.1em;
+            text-align: center;
+            color: white;
+        }
+    }
+
+    div.panel-content {
+        height: calc(100% - 2em);
+        padding: 1em;
+        flex-direction: column;
+
+        * {
+            font-weight: lighter;
+        }
+
+        img.panel-image {
+            width: 90%;
+        }
+
+        div.link-icons {
+            color: gray;
+            flex-direction: row;
+
+            svg.MuiSvgIcon-root:not(:first-child) {
+                margin-left: 1.5em;
+            }
+        }
+    }
+}

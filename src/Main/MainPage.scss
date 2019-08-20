@@ -1,0 +1,99 @@
+div.mainpage-wrapper {
+    height: 100%;
+    padding: 0 7em;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+
+    // @media (min-width: 883px) {
+    //     > :first-child  {
+    //         margin-right: 6em;
+    //     }
+    // }
+
+    div.header {
+        width: 30%;
+
+        h1 {
+            font-size: 3em;
+            font-weight: lighter;
+            line-height: 0.3em;
+            letter-spacing: 0.08em;
+        }
+    }
+
+    div.content {
+        height: 100%;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        div.page-tracker {
+            margin-bottom: 1em;
+            color: rgb(185, 185, 185);
+            display: flex;
+            flex-direction: row;
+
+            .tracker-active {
+                div.tracker-line {
+                    border-bottom: 1px solid rgb(0, 218, 218);
+                    color: rgb(0, 218, 218);
+
+                    div.circle-wrapper {
+                        div.circle {
+                            border: 1px solid rgb(0, 218, 218);
+                        }
+                    }
+                }
+            }
+
+            div.tracker-line {
+                border-bottom: 1px solid rgb(185, 185, 185);
+                height: 50%;
+                overflow: show;
+                width: 3em;
+
+                div.circle-wrapper {
+                    width: 1.5em; //this determines circle size
+                    height: 1.5em;
+    
+                    div.circle {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        border: 1px solid rgb(185, 185, 185);
+                        background-color: white;
+                    }
+                }
+            }
+
+            svg.MuiSvgIcon-root {
+                font-size: 1em;
+            }
+        }
+
+        div.section {
+            height: 70%;
+        }
+    }
+}
+
+#return-to-grid {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    > :first-child {
+        margin-right: 0.5em;
+    }
+
+    p, svg.MuiSvgIcon-root {
+        color: rgb(185, 185, 185);
+    }
+
+    svg.MuiSvgIcon-root {
+        margin-top: 0.15em;
+        font-size: 1.3em;
+    }
+}

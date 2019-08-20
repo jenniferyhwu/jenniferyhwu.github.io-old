@@ -1,0 +1,15 @@
+div.grid-frame {
+    flex-direction: column;
+}
+
+div.grid-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0.5em;
+}
+
+div.grid-square {
+    height: calc((100vh - 1em * 4) / 3);
+    width: calc((100vh - 1em * 4) / 3);
+    margin: 0 0.5em;
+}

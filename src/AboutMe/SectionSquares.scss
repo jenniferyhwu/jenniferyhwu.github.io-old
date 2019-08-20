@@ -1,0 +1,49 @@
+a.link-square {
+    height: 100%;
+    width: 100%;
+}
+
+div.square-wrapper {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    h2, h4 {
+        letter-spacing: 0.1em;
+        font-weight: lighter;
+    }
+
+    &.github {
+        background-color: rgb(224, 255, 250);
+    }
+
+    &.devpost {
+        background-color: rgb(238, 236, 202);
+    }
+
+    &.linkedin {
+        background-color: rgb(248, 233, 246);
+    }
+
+    &.resume {
+        background-color: rgb(233, 248, 242);
+
+        div.links {
+            flex-direction: row;
+
+            > :not(:last-child) {
+                margin-right: 2em;
+            }
+
+            button {
+                width: 10em;
+                font-weight: lighter;
+                color: white;
+                background-color: rgb(25, 131, 104);
+                line-height: 1.5em;
+                border-radius: 7px;
+                border: none;
+            }
+        }
+    }
+}

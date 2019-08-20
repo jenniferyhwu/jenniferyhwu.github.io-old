@@ -1,0 +1,225 @@
+div.resume-wrapper {
+    display: flex;
+    flex-direction: row;
+    //background-color: rgb(255, 248, 232);
+    height: 100%;
+    width: 100%;
+
+    > :not(:last-child) {
+        margin-right: 1em;
+    }
+
+    div.general {
+        height: 100%;
+        flex: 0 0 calc(70% - 1em);
+        overflow: auto;
+
+        div.skills-block {
+            border-left: 3px dotted rgb(0, 95, 133);
+            background-color: rgb(238, 255, 255);
+
+            .section-header {
+                color: rgb(0, 86, 126);
+            }
+
+            div.inner-block {
+                flex-direction: row;
+
+                .sub-header {
+                    color: rgb(0, 152, 190);
+                }
+
+                .desc-text {
+                    color: rgb(0, 86, 126);
+                }
+            }
+        }
+
+        div.exp-block {
+            background-color: rgb(237, 255, 235);
+            border-left: 3px dotted rgb(4, 133, 0);
+
+            .section-header {
+                color: rgb(0, 126, 27);
+            }
+
+            .sub-header {
+                color: rgb(0, 190, 85);
+            }
+
+            .desc-text {
+                color: rgb(0, 126, 27);
+            }
+
+            li:before {
+                color: rgb(0, 190, 85);
+            }
+        }
+        
+        div.awards-block {
+            background-color: rgb(255, 247, 249);
+            border-left: 3px dotted rgb(133, 0, 51);
+
+            .section-header {
+                color: rgb(126, 0, 48);
+            }
+
+            .sub-header {
+                color: rgb(190, 0, 57);
+            }
+
+            .desc-text {
+                color: rgb(126, 0, 38);
+            }
+
+            li:before {
+                color: rgb(190, 0, 63);
+            }
+        }
+
+        div.edu-block {
+            background-color: rgb(255, 252, 247);
+            border-left: 3px dotted rgb(133, 75, 0);
+
+            .section-header {
+                color: rgb(126, 57, 0);
+            }
+
+            .sub-header {
+                color: rgb(190, 85, 0);
+            }
+
+            .desc-text {
+                color: rgb(126, 71, 0);
+            }
+
+            li:before {
+                color: rgb(190, 92, 0);
+            }
+        }
+
+        div.detail-block {
+            div.inner-block {
+                flex-direction: column;
+
+                &:not(:nth-child(2)) {
+                    padding-top: 0.3em;
+                }
+
+                div.sub {           
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .sub-header {
+                        .subsub-header {
+                            font-weight: lighter;
+                        }
+
+                        .date-header {
+                            font-size: 0.9em;
+                        }
+                    }
+                }
+
+                div.desc {
+                    .desc-text {
+                        padding-left: 2em;
+
+                        li {
+                            list-style: none;
+                            margin-top: 0.5em;
+                        }
+
+                        li:before {
+                            content: '\2022';
+                            display: block;
+                            position: relative;
+                            max-width: 0;
+                            max-height: 0;
+                            left: -11px;
+                            top: 0;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.info-block {
+            padding: 0.5em 1.5em 0.7em 1.5em;
+            
+            &:not(:last-child) {
+                margin-bottom: 0.5em;
+            }
+            
+            .section-header {
+                letter-spacing: 0.1em;
+                margin: 0.5em 0;
+            }
+
+            div.inner-block {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0.3em;
+
+                .sub-header, .desc-text {
+                    line-height: 16px;
+                }
+
+                .sub-header {
+                    margin: 0;
+                    margin-right: 0.5em;
+                }
+
+                .desc-text {
+                    margin: 0;
+                    font-weight: lighter;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+
+    div.timeline-wrapper {
+        height: 100%;
+        width: 100%;
+        flex: 0 0 30%;
+        position: relative;
+        
+        * {
+            font-weight: lighter;
+        }
+
+        div.timeline {
+            color: rgb(121, 121, 121);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            overflow-y: scroll;
+    
+            div.event {
+                z-index: 2;
+                background-color: white;
+                padding: 0.5em 0;
+                margin: 1em 0;
+                text-align: center;
+    
+                h4, h6 {
+                    margin: 0;
+                }
+            }
+        }
+    
+        div.timeline-line {
+            overflow: show;
+            width: 50%;
+            height: 100%;
+            float: left;
+            position: absolute;
+            border-right: 1px dotted rgb(204, 204, 204);
+        }
+    }
+}

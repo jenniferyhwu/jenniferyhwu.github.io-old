@@ -1,0 +1,79 @@
+div.project-panel {
+    &.litdubs {
+        background-color: rgb(233, 250, 237);
+        color: rgb(11, 77, 38);
+
+        div.panel-footer {
+            background-color: rgb(11, 77, 38);
+            
+            .accent-font {
+                color: rgb(181, 219, 190);
+            }
+        }
+    }
+
+    &.cali-or-bust {
+        background-color: rgb(255, 235, 239);
+        color: rgb(105, 35, 35);
+
+        div.panel-footer {
+            background-color: rgb(105, 35, 35);
+            
+            .accent-font {
+                color: rgb(219, 181, 188);
+            }
+        }
+    }
+
+    &.siloed {
+        background-color: rgb(250, 240, 233);
+        color: rgb(105, 79, 6);
+
+        div.panel-footer {
+            background-color: rgb(104, 77, 2);
+            
+            .accent-font {
+                color: rgb(219, 204, 181);
+            }
+        }
+    }
+
+    &.cordelia {
+        background-color: rgb(235, 251, 255);
+        color: rgb(22, 73, 97);
+
+        div.panel-footer {
+            background-color: rgb(22, 73, 97);
+            
+            .accent-font {
+                color: rgb(181, 208, 219);
+            }
+        }
+    }
+
+    &.iscribe {
+        background-color: rgb(236, 250, 247);
+        color: rgb(6, 83, 94);
+
+        div.panel-footer {
+            background-color: rgb(6, 83, 94);
+            
+            .accent-font {
+                color: rgb(181, 217, 219);
+            }
+        }
+    }
+
+    &.eigenfaces {
+        background-color: rgb(247, 242, 253);
+        color: rgb(59, 16, 88);
+
+        div.panel-footer {
+            background-color: rgb(59, 16, 88);
+            
+            .accent-font {
+                color: rgb(196, 181, 219);
+            }
+        }
+    }
+}
