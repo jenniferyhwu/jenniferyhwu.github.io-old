@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './Resume.scss';
+import { Slide } from '@material-ui/core';
 
 const events = [
     {
@@ -109,19 +110,22 @@ class Timeline extends Component {
 
     render() {
         return (
-            <div className="timeline-wrapper">
-                {drawTimelineLine()}
-                <div className="timeline">
-                    {events.map((event, i: number) => {
-                        {this.switchTop()}
+            <div className="events-wrapper center-wrapper">
+                <h3 className="section-header">EVENTS</h3>
+                <div className="timeline-wrapper">
+                    {drawTimelineLine()}
+                    <div className="timeline center-wrapper">
+                        {events.map((event, i: number) => {
+                            {this.switchTop()}
 
-                        return (
-                            <div className={"event center-wrapper" + (this.renderOnTop ? "top" : "bottom")} key={i}>
-                                <h4>{event.title}</h4>
-                                <h6>{event.date}</h6>
-                            </div>
-                        )
-                    })}
+                            return (
+                                <div className={"event center-wrapper" + (this.renderOnTop ? "top" : "bottom")} key={i}>
+                                    <h4>{event.title}</h4>
+                                    <h6>{event.date}</h6>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         )

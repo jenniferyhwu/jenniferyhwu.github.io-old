@@ -8,6 +8,7 @@ import Grid from '../Grid/Grid';
 
 import './MainPage.scss';
 import Projects from '../Projects/Projects';
+import { Slide } from '@material-ui/core';
 
 const pageTrackerIcons: Array<any> = [
     //{icon: <Apps />, link: "/"},
@@ -59,7 +60,7 @@ function Circle(icon: JSX.Element) {
 class PageTracker extends Component {
     render() {
         return (
-            <div className="page-tracker">
+            <div className="page-tracker center-wrapper">
                 {pageTrackerIcons.map((iconObject, i: number) => {
                     return (
                         <NavLink to={iconObject.link} exact={true} activeClassName="tracker-active" key={i}>
@@ -80,12 +81,17 @@ class MainPage extends Component<any> {
 
                 <div className="content">
                     <PageTracker />
+                    
+                    {/* <div className="fade-top"></div> */}
+
                     <div className="section">
                         <Route path="/" exact component={AboutMe} />
                         <Route path="/resume/" component={Resume} />
                         <Route path="/projects/" component={Projects} />
                     </div>
-                    {ReturnButton()}
+                    {/* {ReturnButton()} */}
+
+                    {/* <div className="fade-bottom"></div> */}
                 </div>
             </div>
         )

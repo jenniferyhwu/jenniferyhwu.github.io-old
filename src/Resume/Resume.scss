@@ -9,6 +9,11 @@ div.resume-wrapper {
         margin-right: 1em;
     }
 
+    .section-header {
+        letter-spacing: 0.1em;
+        margin: 0.5em 0;
+    }
+
     div.general {
         height: 100%;
         flex: 0 0 calc(70% - 1em);
@@ -152,11 +157,6 @@ div.resume-wrapper {
             &:not(:last-child) {
                 margin-bottom: 0.5em;
             }
-            
-            .section-header {
-                letter-spacing: 0.1em;
-                margin: 0.5em 0;
-            }
 
             div.inner-block {
                 display: flex;
@@ -181,11 +181,26 @@ div.resume-wrapper {
         }
     }
 
-    div.timeline-wrapper {
+    div.events-wrapper {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        flex: 0 0 30%;
         height: 100%;
         width: 100%;
-        flex: 0 0 30%;
+
+        > h3.section-header {
+            color: rgb(0, 218, 218);
+            font-size: 0.8em;
+            margin: 0;
+            margin-bottom: 1em;
+        }
+    }
+
+    div.timeline-wrapper {
+        height: calc(100% - 5em);
+        width: 100%;
         position: relative;
+        flex-direction: row;
         
         * {
             font-weight: lighter;
@@ -198,6 +213,7 @@ div.resume-wrapper {
             flex-direction: column;
             align-items: center;
             justify-content: start;
+            flex-wrap: nowrap;
             overflow-y: scroll;
     
             div.event {
@@ -219,7 +235,7 @@ div.resume-wrapper {
             height: 100%;
             float: left;
             position: absolute;
-            border-right: 1px dotted rgb(204, 204, 204);
+            border-right: 1px dotted rgb(0, 218, 218);
         }
     }
 }

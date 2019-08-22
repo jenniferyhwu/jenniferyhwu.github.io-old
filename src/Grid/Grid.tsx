@@ -6,11 +6,11 @@ import Resume from '../Resume/Resume';
 
 import './Grid.scss';
 
-const gridContents = [
+const gridContents: any = [
     [
         { content: <Main/>, link: '/main-page/'},
         { content: <Main/>, link: ''},
-        { content: <Resume/>, link: '/resume/'}
+        { content: <Main />, link: '/resume/'}
     ],
     [
         { content: <Main/>, link: ''},
