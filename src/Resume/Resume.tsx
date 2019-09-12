@@ -111,7 +111,7 @@ class Timeline extends Component {
     render() {
         return (
             <div className="events-wrapper center-wrapper">
-                <h3 className="section-header">EVENTS</h3>
+                <h3 className="section-header">MILESTONES</h3>
                 <div className="timeline-wrapper">
                     {drawTimelineLine()}
                     <div className="timeline center-wrapper">

@@ -6,10 +6,14 @@
     "@material-ui/core": "^4.3.1",
     "@material-ui/icons": "^4.2.1",
     "@types/jest": "24.0.16",
+    "@types/jquery": "^3.3.31",
+    "@types/lodash": "^4.14.138",
     "@types/node": "12.6.9",
     "@types/react": "^16.8.24",
     "@types/react-dom": "16.8.5",
     "@types/react-router-dom": "^4.3.4",
+    "jquery": "^3.4.1",
+    "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -17,7 +21,8 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "three": "^0.107.0",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "wolfy87-eventemitter": "^5.2.6"
   },
   "scripts": {
     "start": "react-scripts start",

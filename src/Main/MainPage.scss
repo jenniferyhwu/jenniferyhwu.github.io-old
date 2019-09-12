@@ -98,8 +98,44 @@ div.mainpage-wrapper {
         div.section {
             height: 100%;
             width: calc(100% - 7em);
+            position: relative;
+            overflow: hidden;
         }
     }
+}
+
+h1.section-header {
+    font-size: 3em;
+    font-weight: lighter;
+    color: rgb(0, 218, 218);
+    line-height: 0.3em;
+    letter-spacing: 0.08em;
+}
+
+#link-up-btn, #link-down-btn {
+    position: absolute;
+    z-index: 30;
+    width: 100%;
+    height: 3em;
+    //background: rgba(0, 255, 242, 0.3);
+    transition: smooth;
+
+    svg.MuiSvgIcon-root {
+        color: rgb(0, 218, 218);
+        background-color: rgba(0, 218, 218, 0.1);
+        border-radius: 50%;
+        height: 1.5em;
+        width: 1.5em;
+    }
+}
+
+#link-up-btn {
+    //margin-top: -3em;
+}
+
+#link-down-btn {
+    //bottom: -1em;
+    margin-top: -3em;
 }
 
 #return-to-grid {
