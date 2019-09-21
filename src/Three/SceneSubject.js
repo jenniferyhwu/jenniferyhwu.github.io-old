@@ -45,15 +45,34 @@ class SceneSubject {
         loader.load(process.env.PUBLIC_URL + '/crate/scene.gltf', (geometry => {
             //let mesh = new THREE.Mesh(geometry, material);
             object = geometry.scene;
+            object.position.set(0,-70,0);
+            object.scale.set(0.7,0.7,0.9);
+            object.rotation.z = Math.PI/7;
             this.group.add(object);
         }));
 
-        loader.load(process.env.PUBLIC_URL + '/scene/scene.gltf', (geometry => {
-            //let mesh = new THREE.Mesh(geometry, material);
+        loader.load(process.env.PUBLIC_URL + '/laptop/scene.gltf', (geometry => {
             object = geometry.scene;
+            object.position.set(-70,35,0);
+            object.rotation.set(Math.PI/4,Math.PI/2,Math.PI/12);
+            object.scale.set(5,5,5);
             this.group.add(object);
         }));
-    
+
+        loader.load(process.env.PUBLIC_URL + '/grass/scene.gltf', (geometry => {
+            object = geometry.scene;
+            object.position.set(0,-80,0);
+            this.group.add(object);
+        }));
+
+        loader.load(process.env.PUBLIC_URL + '/coffee/scene.gltf', (geometry => {
+            object = geometry.scene;
+            object.scale.set(5,3,5);
+            object.position.set(-70,-80,-40);
+            object.rotation.y = Math.PI;
+            this.group.add(object);
+        }));
+
         //this.group.add(this.subjectMesh);
         //this.group.add(this.subjectWireframe);
         //scene.add(this.group);

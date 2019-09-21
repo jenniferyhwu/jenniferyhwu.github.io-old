@@ -7,9 +7,6 @@ class AboutMeThree extends Component {
     render() {
         return (
             <div className="aboutmethree-wrapper center-wrapper">
-                <div className="three-model-container">
-                    <MyThreeComponent />
-                </div>
             </div>
         )
     }

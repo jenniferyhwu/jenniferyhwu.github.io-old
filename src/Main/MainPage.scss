@@ -1,18 +1,19 @@
 div.mainpage-wrapper {
     height: 100%;
-    padding: 0 7em;
     flex-direction: row;
     justify-content: space-between;
     text-align: start;
 
-    // @media (min-width: 883px) {
-    //     > :first-child  {
-    //         margin-right: 6em;
-    //     }
-    // }
+    @media (min-width: 1166px) {
+        padding: 0 7em;
+    }
 
     div.header {
         width: 25%;
+
+        @media (max-width: 1165px) {
+            text-align: center;
+        }
 
         h1 {
             font-size: 3em;
@@ -104,12 +105,19 @@ div.mainpage-wrapper {
     }
 }
 
-h1.section-header {
-    font-size: 3em;
+.section-header {
     font-weight: lighter;
     color: rgb(0, 218, 218);
-    line-height: 0.3em;
+    line-height: 0.5em;
     letter-spacing: 0.08em;
+
+    &h2 {
+        font-size: 4em;
+    }
+     
+    &h1 {
+        font-size: 6em;
+    }
 }
 
 #link-up-btn, #link-down-btn {

@@ -40,7 +40,7 @@ class SceneManager {
 
     buildScene() {
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color("rgba(0,0,0,0)");
+        scene.background = new THREE.Color("white");
 
         return scene;
     }
@@ -61,11 +61,10 @@ class SceneManager {
         const aspectRatio = 1;
         const fieldOfView = 1000;
         const nearPlane = 20;
-        const farPlane = 500; 
+        const farPlane = 800; 
         const camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
 
-        camera.position.z = 100;
-        camera.zoom = 1;
+        camera.zoom = 1.2;
 
         return camera;
     }
@@ -91,21 +90,21 @@ class SceneManager {
     }
 
     updateCameraPositionRelativeToMouse() {
-        this.camera.position.x += (  (this.mousePosition.x * 0.03) + 200 - this.camera.position.x ) * 0.1;
-        this.camera.position.y += ( -(this.mousePosition.y * 0.03) - 150 - this.camera.position.y ) * 0.1;
+        this.camera.position.x += (  (this.mousePosition.x * 0.05) + 200 - this.camera.position.x ) * 0.1;
+        this.camera.position.y += ( -(this.mousePosition.y * 0.05) + 50 - this.camera.position.y ) * 0.1;
         this.camera.lookAt(this.origin);
     }
 
     onWindowResize() {
-        // const { width, height } = this.canvas;
+        const { width, height } = this.canvas;
         
-        // this.screenDimensions.width = width;
-        // this.screenDimensions.height = height;
+        this.screenDimensions.width = width;
+        this.screenDimensions.height = height;
 
         // this.camera.aspect = width / height;
         this.camera.updateProjectionMatrix();
         
-        // this.renderer.setSize(width, height);
+        this.renderer.setSize(width, height);
     }
 
     onMouseMove(x, y) {

@@ -3,11 +3,34 @@ $linkimage-length: 15em;
 $linkimage-height: 50px;
 
 div.aboutmeheader-wrapper {
+    @media (max-width: 1165px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+    }
 
     div.header {
         width: 100%;
     }
 
+    .section-header {
+        font-weight: lighter;
+        color: rgb(0, 218, 218);
+        line-height: 0.5em;
+        letter-spacing: 0.08em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+     
+    h1 {
+        font-size: 3em;
+    }
+    
     div.searchbar {
         width: 13em;
 

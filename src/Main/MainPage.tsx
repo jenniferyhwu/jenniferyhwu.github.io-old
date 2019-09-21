@@ -247,7 +247,7 @@ class MainPage extends Component<any> {
                             : null
                         }
 
-                        <Route path="/" exact component={AboutMeThree} />
+                        <Route path="/" exact component={AboutMe} />
                         <Route path="/resume/" component={Resume} />
                         <Route path="/projects/" component={Projects} />
                         <Route path="/threeplayground/" component={MyThreeComponent} />

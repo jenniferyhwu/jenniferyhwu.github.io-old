@@ -5,6 +5,7 @@ import { GithubSquare, DevpostSquare, LinkedinSquare, ResumeSquare } from "./Sec
 
 import './AboutMeHeader.scss';
 import { Search } from "@material-ui/icons";
+import MyThreeComponent from "../Three/MyThreeComponent";
 
 const contentItems = [
     [
@@ -58,8 +59,10 @@ class AboutMeHeader extends Component {
     render() {
         return (
             <div className="aboutmeheader-wrapper">
-                <h1 className="section-header">about me</h1>
+                <h2 className="section-header">hi, i'm</h2>
+                <h1 className="section-header">jennifer</h1>
                 <Searchbar />
+                <MyThreeComponent />
                 
                 {/* <div className="links">
                     <LinkImage caption="github" />
