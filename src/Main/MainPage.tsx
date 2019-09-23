@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink, withRouter } from "react-router-dom";
+import { BrowserRouter as HashRouter, Route, Link, NavLink, withRouter } from "react-router-dom";
 import { FullscreenExit, FaceOutlined, AssessmentOutlined, MessageOutlined, LaptopOutlined, Apps, KeyboardArrowDown, KeyboardArrowUp } from '@material-ui/icons';
 
 import * as _ from 'lodash';
