@@ -5,7 +5,7 @@ import './ProjectsHeader.scss';
 class ProjectsHeader extends Component {
     render() {
         return (
-            <div className="projectsheader-wrapper">
+            <div className="projectsheader-wrapper center-wrapper">
                 <h1 className="section-header">projects</h1>
             </div>
         )

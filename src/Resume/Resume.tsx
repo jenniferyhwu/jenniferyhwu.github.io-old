@@ -34,8 +34,9 @@ const resume: any = {
     skills: {
         name: 'skills',
         content: {
-            languages: ['javascript', 'typescript', 'c', 'java', 'c++', 'python', 'html', 'css', 'racket'],
-            tools: ['angular', 'react', 'node.js', 'flask', 'git', 'android studio']
+            languages: ['javascript', 'typescript', 'c', 'python', 'c++', 'java', 'html', 'css/scss', 'racket'],
+            'web tooling': ['angular', 'react', 'node.js', 'flask', 'oauth2.0'],
+            tooling: ['android studio', 'bash', 'linux', 'git', 'jira', 'spring', 'sql']
         }
     },
     experience: {
@@ -43,11 +44,12 @@ const resume: any = {
         content: [
             {
                 company: 'evertz',
-                title: 'student design engineer',
+                title: 'software developer intern',
                 timePeriod: 'may - sep \'19',
                 desc: [
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem integer vitae justo eget magna fermentum iaculis',
-                    'Sed odio morbi quis commodo odio aenean sed adipiscing diam. Mauris sit amet massa vitae tortor condimentum lacinia quis vel'
+                    <li>Created the front-facing, REST-compliant web client for a cloud orchestration product with Angular 8</li>,
+                    <li>Migrated admin dashboard from Angular 4 to 8, leveraging new features to replace defunct libraries</li>,
+                    <li>Ensured that the web clients and the Spring backend were consistently compatible, particularly during the restructuring of the software to implement asynchronous data handling</li>
                 ]
             },
             {
@@ -55,30 +57,39 @@ const resume: any = {
                 title: 'app developer',
                 timePeriod: 'oct \'18 - present',
                 desc: [
-                    'Working in a team to develop an Android app in Java for a design team’s annual rocketry competition – a cost-effective and adaptable method for real-time communication with the rocket while in flight'
+                    <li>Working in a design team to develop an Android app to communicate with a custom rocket</li>,
+                    <li>Implemented an offline map that updates in real time using the osmdroid library</li>
+                ]
+            },
+            {
+                company: 'starterhacks, ruhacks',
+                title: 'mentor',
+                timePeriod: 'jan, may \'19',
+                desc: [
+                    <li>Provided immediate on-site assistance for hackathon participants in debugging their projects as well as providing general developer-related guidance for JavaScript, React, Java, and Android Studio</li>
                 ]
             }
         ]
     },
     awards: {
-        name: 'awards',
+        name: 'projects',
         content: [
             {
-                name: 'best use of gcp',
-                source: 'brickhack',
-                date: 'mar \'19',
+                name: 'cali-or-bust',
+                source: 'tohacks (winner of best use of voiceflow)',
+                date: 'jun \'19',
                 desc: [
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem integer vitae justo eget magna fermentum iaculis',
-                    'Sed odio morbi quis commodo odio aenean sed adipiscing diam. Mauris sit amet massa vitae tortor condimentum lacinia quis vel'
+                    <li>Built an AI-powered chatbot that provides mock interviews tailored to the user</li>,
+                    <li>Used Azure to analyze user responses and Angular and Voiceflow to coordinate visual and aural UIs</li>,
                 ]
             },
             {
-                name: 'best use of here.com',
-                source: 'bostonhacks',
+                name: 'litdubs',
+                source: 'brickhack (winner of best use of gcp)',
                 date: 'oct \'18',
                 desc: [
-                    'Built an SMS-based chatbot that acts as an internet-less GPS for parking spaces',
-                    'Implemented the HERE.com API for location and routing, Shine API for locating parking spots, and Twilio API for communicating between the user and backend via SMS'
+                    <li>Developed a web app that automatically translates and dubs YouTube videos using GCP services</li>,
+                    <li>Created a Python script to retrieve video data and implemented Flask to serve the application</li>
                 ]
             }
         ]
@@ -89,7 +100,7 @@ const resume: any = {
             name: 'university of waterloo',
             desc: [
                 'Candidate for Bachelor of Computer Science, Class of 2023',
-                'Faculty of Mathematics Entrance Scholarship ($5000)'
+                'President\'s Scholarship of Distinction, Faculty of Mathematics Entrance Scholarship'
             ]
         }
     }
@@ -164,7 +175,7 @@ function expBlock() {
                         <div className="desc">
                             <ul className="desc-text">
                                 {exp.desc.map((descItem: any, j: number) => {
-                                    return <li key={j}>{descItem}</li>
+                                    return descItem;
                                 })}
                             </ul>
                         </div>
@@ -189,7 +200,7 @@ function awardsBlock() {
                         <div className="desc">
                             <ul className="desc-text">
                                 {exp.desc.map((descItem: any, j: number) => {
-                                    return <li key={j}>{descItem}</li>
+                                    return descItem;
                                 })}
                             </ul>
                         </div>

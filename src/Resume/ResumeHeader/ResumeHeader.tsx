@@ -16,7 +16,7 @@ class SearchBar extends Component {
 class ResumeHeader extends Component {
     render() {
         return (
-            <div className="resumeheader-wrapper">
+            <div className="resumeheader-wrapper center-wrapper">
                 <h1 className="section-header">resume</h1>
             </div>
         )
