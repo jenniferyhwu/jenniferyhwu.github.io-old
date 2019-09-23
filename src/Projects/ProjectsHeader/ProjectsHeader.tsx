@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import './ProjectsHeader.scss';
+
 class ProjectsHeader extends Component {
     render() {
         return (

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Search } from "@material-ui/icons";
 
+import './ResumeHeader.scss';
+
 class SearchBar extends Component {
     render() {
         return (

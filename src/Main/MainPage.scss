@@ -8,6 +8,10 @@ div.mainpage-wrapper {
         padding: 0 7em;
     }
 
+    @media (max-width: 1165px) {
+        padding-top: 3em;
+    }
+
     div.header {
         width: 25%;
 
@@ -25,12 +29,21 @@ div.mainpage-wrapper {
     }
 
     div.content {
-        height: 100%;
-        width: 75%;
         display: flex;
-        flex-direction: row;
         justify-content: center;
-        position: relative;
+
+        @media(min-width: 1166px) {
+            height: 100%;
+            width: 75%;
+        }
+
+        @media(max-width: 1165px) {
+            height: calc(100% - 3em);
+            width: 100%;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 3em;
+        }
 
         div.fade-top, div.fade-bottom {
             position: absolute;
@@ -48,19 +61,35 @@ div.mainpage-wrapper {
             bottom: 0;
             background: linear-gradient(rgba(255, 255, 255, 0), white);
         }
-
+        
         div.page-tracker {
             color: rgb(185, 185, 185);
             display: flex;
-            flex-direction: column;
-            width: 5em;
-            margin-right: 2em;
-            position: relative;
+
+            @media(min-width: 1166px) {
+                flex-direction: column;
+                width: 5em;
+                margin-right: 2em;
+                position: relative;
+            }
+            
+            @media(max-width: 1165px) {
+                margin-top: 2em;
+                margin-bottom: 2em;
+                flex-direction: row;
+            }
 
             .tracker-active {
                 div.tracker-line {
-                    border-right: 1px solid rgb(0, 218, 218);
                     color: rgb(0, 218, 218);
+                    
+                    @media(min-width: 1166px) {
+                        border-right: 1px solid rgb(0, 218, 218);
+                    }
+
+                    @media(max-width: 1165px) {
+                        border-bottom: 1px solid rgb(0, 218, 218);
+                    }
 
                     div.circle-wrapper {
                         div.circle {
@@ -71,10 +100,19 @@ div.mainpage-wrapper {
             }
 
             div.tracker-line {
-                border-right: 1px solid rgb(185, 185, 185);
-                height: 3em;
                 overflow: visible;
-                width: 50%;
+                
+                @media(min-width: 1166px) {
+                    border-right: 1px solid rgb(185, 185, 185);
+                    height: 3em;
+                    width: 50%;
+                }
+
+                @media(max-width: 1166px) {
+                    border-bottom: 1px solid rgb(185, 185, 185);
+                    width: 3em;
+                    height: 50%;
+                }
 
                 div.circle-wrapper {
                     width: 1.5em; //this determines circle size
@@ -99,8 +137,6 @@ div.mainpage-wrapper {
         div.section {
             height: 100%;
             width: calc(100% - 7em);
-            position: relative;
-            overflow: hidden;
         }
     }
 }
@@ -117,6 +153,12 @@ div.mainpage-wrapper {
      
     &h1 {
         font-size: 6em;
+    }
+
+    @media (max-width: 1165px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -139,11 +181,24 @@ div.mainpage-wrapper {
 
 #link-up-btn {
     //margin-top: -3em;
+
+    @media (max-width: 1165px) {
+        // right: 43%;
+        // top: 128%;
+        display: none;
+    }
 }
 
 #link-down-btn {
-    //bottom: -1em;
-    margin-top: -3em;
+    @media (min-width: 1166px) {
+        margin-top: -3em;
+    }
+
+    @media (max-width: 1165px) {
+        // margin-right: -43%;
+        // top: 128%;
+        display: none;
+    }
 }
 
 #return-to-grid {

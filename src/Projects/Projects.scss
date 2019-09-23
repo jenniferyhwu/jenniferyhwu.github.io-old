@@ -7,10 +7,17 @@ div.project-wrapper {
 
     div.project-panel {
         display: flex;
-        flex: 0 0 35%;
         margin-left: 1em;
         flex-direction: column;
         justify-content: space-between;
+
+        @media (min-width: 1166px) {
+            flex: 0 0 35%;
+        }
+
+        @media (max-width: 1165px) {
+            flex: 0 0 100%;
+        }
 
         &:first-child {
             margin-left: 0;

@@ -100,9 +100,13 @@ class MainPage extends Component<any> {
     linkDownBtn: HTMLDivElement | null = null;
     doc: any;
 
-    debounceTime: number = 100;
+    debounceTime: number = 0;
     wheelTimeout: any;
     //wheelStart: Date = new Date();
+
+    scroller : any;
+
+    bigScreen = window.matchMedia("(min-width: 1166px)");
 
     constructor(props: any) {
         super(props);
@@ -111,6 +115,8 @@ class MainPage extends Component<any> {
         let bod = document.body; //IE 'quirks'
         this.doc = document.documentElement; //IE with doctype
         this.doc = (this.doc.clientHeight) ? this.doc : bod;
+
+        this.scroller = this.screenWheeler(); //this.bigScreen.matches ? this.bigScreenWheeler() : this.smallScreenSwiper();
     }
 
     componentDidMount() {
@@ -122,14 +128,31 @@ class MainPage extends Component<any> {
     }
 
     handleScroll(event: any) {
-        this.handleScrollHelper(event)();
+        this.scroller(event);
     }
-    
-    handleScrollHelper(event: any) {
-        return _.debounce(() => {
-            if (this.debounceTime !== 100) this.debounceTime = 100;
 
-            this.doWheeling(event.deltaY);
+    // smallScreenSwiper() {
+    //     return _.debounce((event: any) => {
+    //         if (event.deltaX > 0) {
+    //             let linkDown = pageDisplay[this.props.location.pathname].linkDown;
+    //             if (linkDown) this.props.history.push(linkDown);
+    //         } else {
+    //             let linkUp = pageDisplay[this.props.location.pathname].linkUp;
+    //             if (linkUp) this.props.history.push(linkUp);
+    //         }
+    
+    //     }, 300);
+    // }
+    
+    screenWheeler() {
+        return  _.debounce((event: any) => {
+            if (this.debounceTime !== 0) this.debounceTime = 0;
+
+            if (this.bigScreen.matches) {
+                this.doWheeling(event.deltaY);
+            } else {
+                this.doWheeling(event.deltaX);
+            }  
             
             this.clearWheelTimeout();
             this.wheelTimeout = setTimeout(() => {
@@ -144,14 +167,24 @@ class MainPage extends Component<any> {
             if (this.linkDownBtn) {
                 this.wheelUpLength += wheelLength / 300;
                 console.log("wheeled up: " + this.wheelUpLength);
-                this.linkDownBtn.style.bottom = this.wheelUpLength + 'em';
+                
+                if (this.bigScreen.matches) {
+                    this.linkDownBtn.style.bottom = this.wheelUpLength + 'em';
+                } else {
+                    this.linkDownBtn.style.right = this.wheelUpLength + 'em';
+                }
             }
         } else if (wheelLength < 0) {
             this.removeWheelDownIcon();
             if (this.linkUpBtn) {
                 this.wheelDownLength -= wheelLength / 300;
                 console.log("wheeled down: " + this.wheelDownLength);
-                this.linkUpBtn.style.top = this.wheelDownLength + 'em';
+                
+                if (this.bigScreen.matches) {
+                    this.linkUpBtn.style.top = this.wheelDownLength + 'em';
+                } else {
+                    this.linkUpBtn.style.left = this.wheelDownLength + 'em';
+                }
             }
         }
 
@@ -162,7 +195,6 @@ class MainPage extends Component<any> {
                 this.props.history.push(linkDown);
                 
                 this.resetWheel();
-                this.debounceTime = 1000;
             }
         } else if (this.wheelDownLength > 1.5) {
             console.log("went up: " + this.wheelDownLength);
@@ -171,16 +203,20 @@ class MainPage extends Component<any> {
                 this.props.history.push(linkUp);
 
                 this.resetWheel();
-                this.debounceTime = 500;
             }
         }
     }
 
     resetWheel() {
         console.log("RESET");
-        this.removeWheelUpIcon();
-        this.removeWheelDownIcon();
-        this.clearWheelTimeout();
+        if (this.bigScreen.matches) {
+            this.removeWheelUpIcon();
+            this.removeWheelDownIcon();
+            this.clearWheelTimeout();
+        } else {
+            this.wheelDownLength = 0;
+            this.wheelUpLength = 0;
+        }
     }
 
     clearWheelTimeout() {
@@ -193,12 +229,16 @@ class MainPage extends Component<any> {
 
         if (this.linkUpBtn) {
             this.linkUpBtn.style.transition = "1s";
-            this.linkUpBtn.style.top = "0";
+            
+            if (this.bigScreen.matches) {
+                this.linkUpBtn.style.top = "0";
+            } else {
+                this.linkUpBtn.style.left = "0";
+            }
         }
         setTimeout(() => {
             if (this.linkUpBtn) {
                 this.linkUpBtn.style.transition = "none";
-                //this.linkUpBtn.style.display = "none";
             }
         }, 1000);
     }
@@ -208,12 +248,16 @@ class MainPage extends Component<any> {
 
         if (this.linkDownBtn) {
             this.linkDownBtn.style.transition = "1s";
-            this.linkDownBtn.style.bottom = "0";
+            
+            if (this.bigScreen.matches) {
+                this.linkDownBtn.style.bottom = "0";
+            } else {
+                this.linkDownBtn.style.right = "0";
+            }
         }
         setTimeout(() => {
             if (this.linkDownBtn) {
                 this.linkDownBtn.style.transition = "none";
-                //this.linkDownBtn.style.display = "none";
             }
         }, 1000);
     }

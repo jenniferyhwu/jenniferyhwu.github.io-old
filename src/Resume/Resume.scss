@@ -1,12 +1,25 @@
 div.resume-wrapper {
     display: flex;
-    flex-direction: row;
     //background-color: rgb(255, 248, 232);
     height: 100%;
     width: 100%;
 
-    > :not(:last-child) {
-        margin-right: 1em;
+    @media (min-width: 1166px) {
+        flex-direction: row;
+
+        > :not(:last-child) {
+            margin-right: 1em;
+        }
+
+        div.general {
+            flex: 0 0 calc(70% - 1em);
+        }
+    }
+
+    @media (max-width: 1165px) {
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .section-header {
@@ -16,7 +29,6 @@ div.resume-wrapper {
 
     div.general {
         height: 100%;
-        flex: 0 0 calc(70% - 1em);
         overflow: auto;
 
         div.skills-block {
@@ -187,6 +199,10 @@ div.resume-wrapper {
         flex: 0 0 30%;
         height: 100%;
         width: 100%;
+
+        @media (max-width: 1165px) {
+            display: none;
+        }
 
         > h3.section-header {
             color: rgb(0, 218, 218);
