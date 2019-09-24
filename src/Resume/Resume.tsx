@@ -47,7 +47,7 @@ const resume: any = {
             {
                 company: 'evertz',
                 title: 'software developer intern',
-                timePeriod: 'may - sep \'19',
+                timePeriod: 'may - aug \'19',
                 desc: [
                     <li key="1">Created the front-facing, REST-compliant web client for a cloud orchestration product with Angular 8</li>,
                     <li key="2">Migrated admin dashboard from Angular 4 to 8, leveraging new features to replace defunct libraries</li>,
