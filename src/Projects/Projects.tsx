@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import shroom from './../images/shroom.png';
+
+import litdubs from './Images/litdubs.png';
+import cordelia from './Images/cordelia.png';
+import caliorbust from './Images/cali-or-bust.png';
+import iscribe from './Images/iscribe.png';
+import eigenfaces from './Images/eigenfaces.png';
+import siloed from './Images/siloed.png';
 
 import 'simplebar';
 import 'simplebar/dist/simplebar.css';
@@ -12,7 +18,7 @@ const projectInfo = [
     {
         classLabel: "litdubs",
         name: "lit dubs",
-        image: shroom,
+        image: litdubs,
         desc: "dubs so lit they speak for themselves.",
         award: {name: "best of use of gcp", hackathon: "brickhack 2019"},
         linkCode: "https://github.com/jenniferyhwu/lit-dubs",
@@ -20,7 +26,7 @@ const projectInfo = [
     },
     {
         name: "cordelia",
-        image: shroom,
+        image: cordelia,
         desc: "because I'm always running out of data.",
         award: {name: "best of use of here.com", hackathon: "bostonhacks 2018"},
         linkCode: "https://github.com/jenniferyhwu/Cordelia",
@@ -28,7 +34,7 @@ const projectInfo = [
     },
     {
         name: "cali-or-bust",
-        image: shroom,
+        image: caliorbust,
         desc: "disclaimer: everything.",
         award: {name: "best of use of voiceflow", hackathon: "tohacks 2019"},
         linkCode: "https://github.com/jenniferyhwu/TOHacks2019",
@@ -36,7 +42,7 @@ const projectInfo = [
     },
     {
         name: "siloed",
-        image: shroom,
+        image: siloed,
         desc: "socioeconomic browsing refined.",
         award: {name: "most millenial hack", hackathon: "terriblehacks 2019"},
         linkCode: "https://github.com/jenniferyhwu/siloed",
@@ -44,7 +50,7 @@ const projectInfo = [
     },
     {
         name: "iscribe",
-        image: shroom,
+        image: iscribe,
         desc: "drugs can be bad for you.",
         award: {hackathon: "yhack 2018"},
         linkCode: "https://github.com/jenniferyhwu/yhacks-2018",
@@ -52,7 +58,7 @@ const projectInfo = [
     },
     {
         name: "eigenfaces",
-        image: shroom,
+        image: eigenfaces,
         desc: "they say we each have three faces...",
         award: {hackathon: "hack the north 2018"},
         linkCode: "https://github.com/jenniferyhwu/EigenFaces",
