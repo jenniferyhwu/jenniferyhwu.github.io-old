@@ -1,6 +1,7 @@
 div.resume-wrapper {
     display: flex;
     //background-color: rgb(255, 248, 232);
+    font-size: 1.1em;
     height: 100%;
     width: 100%;
 
@@ -12,7 +13,7 @@ div.resume-wrapper {
         }
 
         div.general {
-            flex: 0 0 calc(70% - 1em);
+            width: 100%;
         }
     }
 
@@ -24,10 +25,18 @@ div.resume-wrapper {
 
     .section-header {
         letter-spacing: 0.1em;
-        margin: 0.5em 0;
+        
+        @media (min-width: 1166px) {
+            margin-top: 0.5em;
+            margin-bottom: 0.7em;
+        }
+
+        @media (max-width: 1165px) {
+            margin: 1em 0;
+        }
     }
 
-    div.general {
+    .general {
         height: 100%;
         overflow: auto;
 

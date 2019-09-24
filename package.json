@@ -21,6 +21,7 @@
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "simplebar-react": "^1.2.3",
     "three": "^0.107.0",
     "typescript": "3.5.3",
     "wolfy87-eventemitter": "^5.2.6"

@@ -27,7 +27,7 @@ const pageTrackerIcons: Array<any> = [
 
 const pageDisplay: any = {
     "/": {
-        label: "about me",
+        label: "links",
         linkUp: null,
         linkDown: "/resume/",
     },
@@ -90,6 +90,14 @@ class PageTracker extends Component {
             </div>
         )
     }
+}
+
+function SideLabel(label: string) {
+    return (
+        <div className="sidelabel center-wrapper">
+            <h1>{label}</h1>
+        </div>
+    )
 }
 
 class MainPage extends Component<any> {
@@ -166,7 +174,7 @@ class MainPage extends Component<any> {
             this.removeWheelUpIcon();
             if (this.linkDownBtn) {
                 this.wheelUpLength += wheelLength / 300;
-                console.log("wheeled up: " + this.wheelUpLength);
+                //console.log("wheeled up: " + this.wheelUpLength);
                 
                 if (this.bigScreen.matches) {
                     this.linkDownBtn.style.bottom = this.wheelUpLength + 'em';
@@ -178,7 +186,7 @@ class MainPage extends Component<any> {
             this.removeWheelDownIcon();
             if (this.linkUpBtn) {
                 this.wheelDownLength -= wheelLength / 300;
-                console.log("wheeled down: " + this.wheelDownLength);
+                //console.log("wheeled down: " + this.wheelDownLength);
                 
                 if (this.bigScreen.matches) {
                     this.linkUpBtn.style.top = this.wheelDownLength + 'em';
@@ -189,7 +197,7 @@ class MainPage extends Component<any> {
         }
 
         if (this.wheelUpLength > 1.5) {
-            console.log("went down: " + this.wheelUpLength);
+            //console.log("went down: " + this.wheelUpLength);
             let linkDown = pageDisplay[this.props.location.pathname].linkDown;
             if (linkDown) {
                 this.props.history.push(linkDown);
@@ -197,7 +205,7 @@ class MainPage extends Component<any> {
                 this.resetWheel();
             }
         } else if (this.wheelDownLength > 1.5) {
-            console.log("went up: " + this.wheelDownLength);
+            //console.log("went up: " + this.wheelDownLength);
             let linkUp = pageDisplay[this.props.location.pathname].linkUp;
             if (linkUp) {
                 this.props.history.push(linkUp);
@@ -208,7 +216,7 @@ class MainPage extends Component<any> {
     }
 
     resetWheel() {
-        console.log("RESET");
+        //console.log("RESET");
         if (this.bigScreen.matches) {
             this.removeWheelUpIcon();
             this.removeWheelDownIcon();
@@ -273,15 +281,14 @@ class MainPage extends Component<any> {
     render() {
         return (
             <div className="mainpage-wrapper center-wrapper" ref={this.mainpage}>
-                {/* <Header locationPath={this.props.location.pathname}/> */}
-                <Route path="/" exact component={AboutMeHeader} />
-                <Route path="/resume/" component={ResumeHeader} />
-                <Route path="/projects/" component={ProjectsHeader} />
+                {<Route path="/" component={AboutMeHeader} />}
+                {/* <Route path="/resume/" component={ResumeHeader} />
+                <Route path="/projects/" component={ProjectsHeader} /> */}
 
                 <div className="content">
                     <PageTracker />
-                    
-                    {/* <div className="fade-top"></div> */}
+
+                    {this.bigScreen.matches ? null : SideLabel(pageDisplay[this.props.location.pathname].label)}
 
                     <div className="section" ref={this.mainpage}>
                         {pageDisplay[this.props.location.pathname].linkUp ? 
@@ -305,8 +312,9 @@ class MainPage extends Component<any> {
                     </div>
                     {/* {ReturnButton()} */}
 
-                    {/* <div className="fade-bottom"></div> */}
                 </div>
+
+                {this.bigScreen.matches ? SideLabel(pageDisplay[this.props.location.pathname].label) : null}
             </div>
         )
     }

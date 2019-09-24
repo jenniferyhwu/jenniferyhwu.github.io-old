@@ -16,7 +16,7 @@ div.project-wrapper {
         }
 
         @media (max-width: 1165px) {
-            flex: 0 0 100%;
+            flex: 0 0 80%;
         }
 
         &:first-child {
@@ -46,10 +46,9 @@ div.project-wrapper {
         }
 
         div.link-icons {
-            color: gray;
             flex-direction: row;
 
-            svg.MuiSvgIcon-root:not(:first-child) {
+            a:not(:first-child) {
                 margin-left: 1.5em;
             }
         }

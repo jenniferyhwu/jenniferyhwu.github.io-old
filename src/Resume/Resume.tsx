@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
+import 'simplebar';
+import 'simplebar/dist/simplebar.css';
+
 import './Resume.scss';
-import { Slide } from '@material-ui/core';
 
 const events = [
     {
@@ -47,9 +49,9 @@ const resume: any = {
                 title: 'software developer intern',
                 timePeriod: 'may - sep \'19',
                 desc: [
-                    <li>Created the front-facing, REST-compliant web client for a cloud orchestration product with Angular 8</li>,
-                    <li>Migrated admin dashboard from Angular 4 to 8, leveraging new features to replace defunct libraries</li>,
-                    <li>Ensured that the web clients and the Spring backend were consistently compatible, particularly during the restructuring of the software to implement asynchronous data handling</li>
+                    <li key="1">Created the front-facing, REST-compliant web client for a cloud orchestration product with Angular 8</li>,
+                    <li key="2">Migrated admin dashboard from Angular 4 to 8, leveraging new features to replace defunct libraries</li>,
+                    <li key="3">Ensured that the web clients and the Spring backend were consistently compatible, particularly during the restructuring of the software to implement asynchronous data handling</li>
                 ]
             },
             {
@@ -57,8 +59,8 @@ const resume: any = {
                 title: 'app developer',
                 timePeriod: 'oct \'18 - present',
                 desc: [
-                    <li>Working in a design team to develop an Android app to communicate with a custom rocket</li>,
-                    <li>Implemented an offline map that updates in real time using the osmdroid library</li>
+                    <li key="1">Working in a design team to develop an Android app to communicate with a custom rocket</li>,
+                    <li key="2">Implemented an offline map that updates in real time using the osmdroid library</li>
                 ]
             },
             {
@@ -66,7 +68,7 @@ const resume: any = {
                 title: 'mentor',
                 timePeriod: 'jan, may \'19',
                 desc: [
-                    <li>Provided immediate on-site assistance for hackathon participants in debugging their projects as well as providing general developer-related guidance for JavaScript, React, Java, and Android Studio</li>
+                    <li key="1">Provided immediate on-site assistance for hackathon participants in debugging their projects as well as providing general developer-related guidance for JavaScript, React, Java, and Android Studio</li>
                 ]
             }
         ]
@@ -79,8 +81,8 @@ const resume: any = {
                 source: 'tohacks (winner of best use of voiceflow)',
                 date: 'jun \'19',
                 desc: [
-                    <li>Built an AI-powered chatbot that provides mock interviews tailored to the user</li>,
-                    <li>Used Azure to analyze user responses and Angular and Voiceflow to coordinate visual and aural UIs</li>,
+                    <li key="1">Built an AI-powered chatbot that provides mock interviews tailored to the user</li>,
+                    <li key="2">Used Azure to analyze user responses and Angular and Voiceflow to coordinate visual and aural UIs</li>,
                 ]
             },
             {
@@ -88,8 +90,8 @@ const resume: any = {
                 source: 'brickhack (winner of best use of gcp)',
                 date: 'oct \'18',
                 desc: [
-                    <li>Developed a web app that automatically translates and dubs YouTube videos using GCP services</li>,
-                    <li>Created a Python script to retrieve video data and implemented Flask to serve the application</li>
+                    <li key="1">Developed a web app that automatically translates and dubs YouTube videos using GCP services</li>,
+                    <li key="2">Created a Python script to retrieve video data and implemented Flask to serve the application</li>
                 ]
             }
         ]
@@ -232,7 +234,7 @@ function eduBlock() {
 class General extends Component {
     render() {
         return (
-            <div className="general">
+            <div className="general" data-simplebar>
                 {skillsBlock()}
                 {expBlock()}
                 {awardsBlock()}
@@ -248,7 +250,7 @@ class Resume extends Component {
         return (
             <div className="resume-wrapper">
                 <General />
-                <Timeline />
+                {/* <Timeline /> */}
             </div>
         )
     }

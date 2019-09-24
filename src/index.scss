@@ -35,5 +35,9 @@ a {
 
 // REMOVE AND FIND A BETTER WAY LATER
 ::-webkit-scrollbar { 
-  display: none; 
+  //display: none; 
+}
+
+.simplebar-scrollbar:before {
+  background: rgb(101, 221, 221);
 }

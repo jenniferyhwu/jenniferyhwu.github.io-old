@@ -6,46 +6,49 @@ import { Link } from 'react-router-dom';
 
 function ResumeSquare() {
     return (
-        <Link to="/resume/" className="link-square">
+        <a href={process.env.PUBLIC_URL + '/resume.pdf'} target="_blank" className="link-square">
             <div className="resume square-wrapper center-wrapper">
                 <h2>resume</h2>
-                    <WorkOutline />
-                <div className="links center-wrapper">
-                    <h4>pdf</h4>
-                    <h4>web</h4>
-                </div>
+                <WorkOutline />
+                <h4>resume.pdf</h4>
             </div>
-        </Link>
+        </a>
     )
 }
 
 function LinkedinSquare() {
     return (
-        <div className="linkedin square-wrapper center-wrapper">
-            <h2>linkedin</h2>
-            <WorkOutline />
-            <h4>linkedin.com/in/jyhwu</h4>
-        </div>
+        <a href="https://linkedin.com/in/jyhwu/" target="_blank" className="link-square">
+            <div className="linkedin square-wrapper center-wrapper">
+                <h2>linkedin</h2>
+                <WorkOutline />
+                <h4>linkedin.com/in/jyhwu</h4>
+            </div>
+        </a>
     )
 }
 
 function DevpostSquare() {
     return (
-        <div className="devpost square-wrapper center-wrapper">
-            <h2>devpost</h2>
-            <Code />
-            <h4>devpost.com/jenniferyhwu</h4>
-        </div>
+        <a href="https://devpost.com/jenniferyhwu" target="_blank" className="link-square">
+            <div className="devpost square-wrapper center-wrapper">
+                <h2>devpost</h2>
+                <Code />
+                <h4>devpost.com/jenniferyhwu</h4>
+            </div>
+        </a>
     )
 }
 
 function GithubSquare() {
     return (
-        <div className="github square-wrapper center-wrapper">
-            <h2>github</h2>
-            <Code />
-            <h4>github.com/jenniferyhwu</h4>
-        </div>
+        <a href="https://github.com/jenniferyhwu" target="_blank" className="link-square">
+            <div className="github square-wrapper center-wrapper">
+                <h2>github</h2>
+                <Code />
+                <h4>github.com/jenniferyhwu</h4>
+            </div>
+        </a>
     )
 }
 
