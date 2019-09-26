@@ -153,9 +153,11 @@ function skillsBlock() {
                 return (
                     <div className="inner-block" key={skillKey}>
                         <h5 className="sub-header">{skillKey}</h5>
-                        {resume.skills.content[skillKey].map((skill: string, i: number, arr: any) => {
-                            return <p className="desc-text" key={i}>{skill}{arr.length - 1 == i ? "" : ","}&nbsp;</p>
-                        })}
+                        <div className="list-block">
+                            {resume.skills.content[skillKey].map((skill: string, i: number, arr: any) => {
+                                return <p className="desc-text" key={i}>{skill}{arr.length - 1 == i ? "" : ","}&nbsp;</p>
+                            })}
+                        </div>
                     </div>
                 )
             })}
@@ -163,7 +165,7 @@ function skillsBlock() {
     )
 }
 
-function expBlock() {
+function expBlock(big: boolean) {
     return (
         <div className="info-block detail-block exp-block">
             <h3 className="section-header">{resume.experience.name.toUpperCase()}</h3>
@@ -171,8 +173,14 @@ function expBlock() {
                 return (
                     <div className="inner-block" key={i}>
                         <div className="sub">
-                            <h5 className="sub-header">{exp.company}&nbsp;<span className="subsub-header">~&nbsp;{exp.title}</span></h5>
-                            <h5 className="sub-header"><span className="subsub-header date-header">{exp.timePeriod}</span></h5>
+                            <h5 className="sub-header">
+                                {exp.company}&nbsp;
+                                <span className="subsub-header">
+                                    ~&nbsp;{exp.title}
+                                    {big ? '' : ' ~'}
+                                </span>
+                            </h5>
+                            <h5 className="sub-header date-header">{exp.timePeriod}</h5>
                         </div>
                         <div className="desc">
                             <ul className="desc-text">
@@ -188,7 +196,7 @@ function expBlock() {
     )
 }
 
-function awardsBlock() {
+function awardsBlock(big: boolean) {
     return (
         <div className="info-block detail-block awards-block">
             <h3 className="section-header">{resume.awards.name.toUpperCase()}</h3>
@@ -196,8 +204,14 @@ function awardsBlock() {
                 return (
                     <div className="inner-block" key={i}>
                         <div className="sub">
-                            <h5 className="sub-header">{exp.name}&nbsp;<span className="subsub-header">~&nbsp;{exp.source}</span></h5>
-                            <h5 className="sub-header"><span className="subsub-header date-header">{exp.date}</span></h5>
+                            <h5 className="sub-header">
+                                    {exp.name}&nbsp;
+                                    <span className="subsub-header">
+                                        ~&nbsp;{exp.source}
+                                        {big ? '' : ' ~'}
+                                    </span>
+                            </h5>
+                            <h5 className="sub-header date-header">{exp.date}</h5>
                         </div>
                         <div className="desc">
                             <ul className="desc-text">
@@ -232,12 +246,14 @@ function eduBlock() {
 }
 
 class General extends Component {
+    bigScreen: boolean = window.matchMedia("(min-width: 1166px)").matches;
+
     render() {
         return (
             <div className="general" data-simplebar>
                 {skillsBlock()}
-                {expBlock()}
-                {awardsBlock()}
+                {expBlock(this.bigScreen)}
+                {awardsBlock(this.bigScreen)}
                 {eduBlock()}
             </div>
         )
