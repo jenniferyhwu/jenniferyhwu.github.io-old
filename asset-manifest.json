@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2661e0b1.chunk.css",
+    "main.js": "/static/js/main.7acb37fc.chunk.js",
+    "main.js.map": "/static/js/main.7acb37fc.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.0f25a06c.chunk.css": "/static/css/2.0f25a06c.chunk.css",
+    "static/js/2.bd3b91b2.chunk.js": "/static/js/2.bd3b91b2.chunk.js",
+    "static/js/2.bd3b91b2.chunk.js.map": "/static/js/2.bd3b91b2.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.83917997942c15d686715e4ec218774e.js": "/precache-manifest.83917997942c15d686715e4ec218774e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.0f25a06c.chunk.css.map": "/static/css/2.0f25a06c.chunk.css.map",
+    "static/css/main.2661e0b1.chunk.css.map": "/static/css/main.2661e0b1.chunk.css.map",
+    "static/media/cali-or-bust.png": "/static/media/cali-or-bust.5bd110e7.png",
+    "static/media/cordelia.png": "/static/media/cordelia.91fee955.png",
+    "static/media/eigenfaces.png": "/static/media/eigenfaces.f3fee79b.png",
+    "static/media/iscribe.png": "/static/media/iscribe.954f1fab.png",
+    "static/media/AboutMeHeader.scss": "/static/media/kitten.ff219049.jpg",
+    "static/media/litdubs.png": "/static/media/litdubs.c11cdf72.png",
+    "static/media/siloed.png": "/static/media/siloed.eb6fa658.png"
+  }
+}
